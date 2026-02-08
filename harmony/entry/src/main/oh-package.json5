@@ -1,0 +1,10 @@
+{
+  "src": [
+    "ets/Index.ets",
+    "ets/Scan.ets",
+    "ets/Documents.ets",
+    "ets/History.ets",
+    "ets/Advanced.ets",
+    "ets/Watermark.ets"
+  ]
+}

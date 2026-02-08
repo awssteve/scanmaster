@@ -1,0 +1,45 @@
+# V2版本依赖
+# 基础依赖（同requirements.txt）
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+pillow==10.1.0
+opencv-python==4.8.1.78
+paddlepaddle==2.5.2
+paddleocr==2.7.0.3
+pypdf2==3.0.1
+python-dotenv==1.0.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+aiofiles==23.2.1
+sqlalchemy==2.0.23
+alembic==1.12.1
+
+# V2新增依赖
+# 用户认证
+passlib[bcrypt]==1.7.4
+python-jose[cryptography]==3.3.0
+python-multipart==0.0.6
+
+# Word文档
+python-docx==1.1.0
+
+# Excel文档
+openpyxl==3.1.2
+pandas==2.1.4
+
+# 翻译（可选，根据实际API选择）
+# 百度翻译
+# baidu-aip==4.16.13
+# 腾讯翻译
+# tencentcloud-sdk-python==3.0.900
+
+# 数据库（生产环境用PostgreSQL）
+# psycopg2-binary==2.9.9
+
+# 监控
+# prometheus-client==0.19.0
+# sentry-sdk==1.39.1
+
+# 缓存
+# redis==5.0.1

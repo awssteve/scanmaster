@@ -1,0 +1,34 @@
+{
+  "module": {
+    "name": "entry",
+    "type": "entry",
+    "description": "$string:module_desc",
+    "mainElement": "Index",
+    "deviceTypes": [
+      "default",
+      "tablet"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "src": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:entryability_desc",
+        "icon": "$media:icon",
+        "label": "$string:entry_label",
+        "startWindowIcon": "$media:icon",
+        "exported": true
+      },
+      {
+        "name": "ScanAbility",
+        "src": "./ets/scanability/ScanAbility.ets",
+        "description": "$string:scan_ability_desc",
+        "icon": "$media:icon",
+        "label": "$string:scan_label",
+        "exported": false
+      }
+    ]
+  }
+}

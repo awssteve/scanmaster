@@ -1,0 +1,16 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+pillow==10.1.0
+opencv-python==4.8.1.78
+paddlepaddle==2.5.2
+paddleocr==2.7.0.3
+pypdf2==3.0.1
+python-dotenv==1.0.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+aiofiles==23.2.1
+sqlalchemy==2.0.23
+aiofiles==23.2.1
+pydantic==2.5.0
+pydantic-settings==2.1.0

@@ -11,11 +11,14 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
+# 升级 pip
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+
 # 复制依赖文件
 COPY requirements.txt .
 
-# 安装Python依赖
-RUN pip install --no-cache-dir -r requirements.txt
+# 安装Python依赖（增加超时和重试）
+RUN pip install --no-cache-dir --timeout 300 --retries 3 -r requirements.txt
 
 # 复制应用代码
 COPY . .

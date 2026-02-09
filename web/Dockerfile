@@ -3,7 +3,8 @@ FROM node:18-alpine AS builder
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+# 增加 npm 安装的稳定性
+RUN npm install --registry=https://registry.npmmirror.com
 
 COPY . .
 RUN npm run build:only

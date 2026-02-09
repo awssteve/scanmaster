@@ -1,5 +1,15 @@
 import request from '@/utils/request'
 
+// 通用类型
+export interface Document {
+  id: string
+  name: string
+  type: string
+  created_at: string | null
+  status: string
+  metadata?: any
+}
+
 // 请求配置
 export interface ScanResult {
   document_id: string
@@ -102,4 +112,45 @@ export const scanIdCard = async (
   formData.append('user_id', 'default')
 
   return request.post<IDCardResult>('/id-card/scan', formData)
+}
+
+// 获取文档列表
+export const getDocuments = async (user_id: string = 'default') => {
+  return request.get<Document[]>('/documents', {
+    params: { user_id }
+  })
+}
+
+// 获取文档详情
+export interface DocumentDetail extends Document {
+  text: string
+  textCount: number
+  image_url?: string
+}
+
+export const getDocument = async (document_id: string, user_id: string = 'default') => {
+  return request.get<DocumentDetail>(`/documents/${document_id}`, {
+    params: { user_id }
+  })
+}
+
+// 删除文档
+export const deleteDocument = async (document_id: string, user_id: string = 'default') => {
+  return request.delete(`/documents/${document_id}`, {
+    params: { user_id }
+  })
+}
+
+// 获取扫描历史
+export interface ScanHistoryItem {
+  id: string
+  name: string
+  timestamp: string | null
+  textCount: number
+}
+
+export const getScanHistory = async (user_id: string = 'default') => {
+  return request.get<ScanHistoryItem[]>('/history', {
+    params: { user_id }
+  })
 }

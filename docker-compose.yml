@@ -2,14 +2,14 @@ services:
   backend:
     build: ./backend
     ports:
-      - "8000:8000"
+      - "8001:8000"
     volumes:
       - ./backend/uploads:/app/uploads
       - ./backend/temp:/app/temp
       - ./backend/static:/app/static
     environment:
       - ENVIRONMENT=production
-      - OCR_USE_GPU=True
+      - OCR_USE_GPU=False
       - OCR_LANG_DEFAULT=ch
     restart: unless-stopped
 

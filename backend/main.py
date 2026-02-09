@@ -11,7 +11,7 @@ from pathlib import Path
 
 from app.core.config import settings
 from app.database import init_db
-from app.api import documents, id_card
+from app.api import documents, id_card, auth, batch, advanced
 from app.services.ocr_service import OCRService
 from app.services.pdf_service import PDFService
 from app.services.image_service import ImageService

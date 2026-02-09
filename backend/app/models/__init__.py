@@ -37,7 +37,7 @@ class Document(Base):
     file_path = Column(String(500), nullable=False)
     thumbnail_path = Column(String(500))
     ocr_result = Column(JSON)  # OCR识别结果
-    metadata = Column(JSON)  # 元数据（文件大小、分辨率等）
+    doc_metadata = Column(JSON)  # 元数据（文件大小、分辨率等）
     status = Column(String(20), default="processing")  # processing/success/failed
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now())

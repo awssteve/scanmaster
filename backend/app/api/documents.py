@@ -55,7 +55,7 @@ async def get_document(document_id: str, user_id: str = "default", db: Session =
         "type": document.type,
         "created_at": document.created_at.isoformat() if document.created_at else None,
         "status": document.status,
-        "metadata": document.metadata,
+        "metadata": document.doc_metadata,
         "text": ""
     }
 

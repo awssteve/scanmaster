@@ -20,7 +20,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 security = HTTPBearer()
 
 # JWT密钥
-SECRET_KEY = settings.JWT_SECRET if hasattr(settings, 'JWT_SECRET') else "your-secret-key-change-in-production"
+SECRET_KEY = settings.JWT_SECRET
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 480  # 8小时
 REFRESH_TOKEN_EXPIRE_DAYS = 30

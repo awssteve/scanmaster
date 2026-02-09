@@ -41,6 +41,9 @@ class Settings(BaseSettings):
     # 日志配置
     LOG_LEVEL: str = "INFO"
 
+    # JWT配置
+    JWT_SECRET: str = "your-secret-key-change-this-in-production"
+
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"

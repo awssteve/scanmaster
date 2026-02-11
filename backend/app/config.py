@@ -17,6 +17,9 @@ class Settings(BaseSettings):
     HOST: str = "0.0.0.0"
     PORT: int = 8000
 
+    # 数据库配置
+    DATABASE_URL: str = "sqlite:///./scanmaster.db"
+
     # 文件上传
     MAX_UPLOAD_SIZE: int = 50 * 1024 * 1024  # 50MB
     ALLOWED_EXTENSIONS: list = [".jpg", ".jpeg", ".png", ".gif", ".webp", ".pdf"]
@@ -37,9 +40,14 @@ class Settings(BaseSettings):
     # 日志配置
     LOG_LEVEL: str = "INFO"
 
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
+    # JWT配置
+    JWT_SECRET: str = "your-secret-key-change-this-in-production"
+
+    model_config = {
+        "env_file": ".env",
+        "env_file_encoding": "utf-8",
+        "extra": "ignore"  # 忽略额外的环境变量
+    }
 
 
 settings = Settings()

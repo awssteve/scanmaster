@@ -3,6 +3,7 @@
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.exc import OperationalError
 from app.models import Base
 from app.config import settings
 
@@ -29,4 +30,9 @@ def get_db():
 
 def init_db():
     """初始化数据库"""
-    Base.metadata.create_all(bind=engine, checkfirst=True)
+    try:
+        Base.metadata.create_all(bind=engine, checkfirst=True)
+    except OperationalError as e:
+        # 忽略表已存在的错误（多进程并发时可能发生）
+        if "already exists" not in str(e):
+            raise
